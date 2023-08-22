@@ -1,0 +1,130 @@
+#container {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #F0F8FF;
+}
+
+#header {
+    background-color: #F0F8FF;
+    width: 100%;
+    height: 150px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#header-layer1 {
+    background-image: url(../img/mollect/logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+
+#header-layer2 {
+    width: 80%;
+    height: 100%;
+    float: right;
+}
+
+#header-top {
+    width: 100%;
+    height: 100px;
+    float: right;
+}
+
+#header-top li {
+    float: right;
+}
+
+#header-top>li>a {
+    display: block;
+    padding: 1px 10px;
+    font-size: 1em;
+    color: blue;
+}
+
+#nav {
+    width: 100%;
+    height: 50px;
+    float: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #5F9DD7;
+}
+
+#menu {
+    height: 30px;
+}
+
+#menu li {
+    float: left;
+}
+
+#menu>li>a {
+    display: block;
+    padding: 1px 100px;
+    font-size: 1.2em;
+    color: white;
+    font-weight: 600;
+}
+
+#footer {
+    background-image: url(../img/mollect/footer.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: center;
+    height: 200px;
+    width: 100%;
+}
+
+#main {
+    width: 100%;
+    height: 600px;
+}
+
+#login {
+    margin: auto;
+    text-align: center;
+    height: 100%;
+    width: 50%;
+    padding-top: 15%;
+    padding-bottom: 5%;
+}
+
+#login-header {
+    height: 100px;
+}
+
+#login-footer {
+    height: 50px;
+    text-align: center;
+}
+
+#login-header-layer1 {
+    height: 100%;
+    width: 60%;
+    float: left;
+}
+
+#login-header-layer2 {
+    height: 100%;
+    width: 40%;
+    float: left;
+}
+
+#btn {
+    width: 70%;
+    height: 50%;
+}
+
+#advertisting {
+    text-align: center;
+    display: block;
+}

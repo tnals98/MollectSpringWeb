@@ -1,0 +1,112 @@
+#container {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #F0F8FF;
+}
+
+#header {
+    background-color: #F0F8FF;
+    width: 100%;
+    height: 150px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#header-layer1 {
+    background-image: url(../img/mollect/logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+
+#header-layer2 {
+    width: 80%;
+    height: 100%;
+    float: right;
+}
+
+#header-top {
+    width: 55%;
+    height: 100px;
+    float: right;
+}
+
+#header-top li {
+    float: right;
+}
+
+#header-top>li>a {
+    display: block;
+    padding: 1px 10px;
+    font-size: 1em;
+    color: blue;
+}
+
+#nav {
+    width: 100%;
+    height: 50px;
+    float: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #5F9DD7;
+}
+
+#menu {
+    height: 30px;
+}
+
+#menu li {
+    float: left;
+}
+
+#menu>li>a {
+    display: block;
+    padding: 1px 100px;
+    font-size: 1.2em;
+    color: white;
+    font-weight: 600;
+}
+
+#footer {
+    background-image: url(../img/mollect/footer.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: center;
+    height: 200px;
+    width: 100%;
+}
+
+#main {
+    width: 100%;
+    height: 500px;
+}
+
+#main-layer1 {
+    width: 100%;
+    height: 10px;
+}
+
+#main-layer1>h3 {
+    font-size: 1.2em;
+    text-align: center;
+    color: #589CDB;
+    font-weight: 600;
+}
+
+#main-layer2 {
+    text-align: center;
+    height: 50%;
+    width: 50%;
+}
+
+#btn {
+    text-align: center;
+}
