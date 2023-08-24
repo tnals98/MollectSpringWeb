@@ -21,6 +21,18 @@ public class NoticeStoreLogic implements NoticeStore{
 	}
 
 	@Override
+	public int modifyNotice(SqlSession session, Notice notice) {
+		int result = session.update("NoticeMapper.modifyNotice", notice);
+		return result;
+	}
+
+	@Override
+	public int eraseNotice(SqlSession session, String noticeNo) {
+		int result = session.delete("NoticeMapper.eraseNotice", noticeNo);
+		return result;
+	}
+
+	@Override
 	public int getListCount(SqlSession session) {
 		int result = session.selectOne("NoticeMapper.getListCount");
 		return result;
@@ -36,9 +48,9 @@ public class NoticeStoreLogic implements NoticeStore{
 	}
 
 	@Override
-	public int getListCount(SqlSession session, Map<String, String> paramMap) {
-		int result = session.selectOne("NoticeMapper.selectNoticesByKeywordCount", paramMap);
-		return result;
+	public Notice selectNoticeByNo(SqlSession session, Integer noticeNo) {
+		Notice noticeOne = session.selectOne("NoticeMapper.selectNoticeByNo", noticeNo);
+		return noticeOne;
 	}
 
 	@Override
@@ -51,21 +63,9 @@ public class NoticeStoreLogic implements NoticeStore{
 	}
 
 	@Override
-	public int eraseNotice(SqlSession session, String noticeNo) {
-		int result = session.delete("NoticeMapper.eraseNotice", noticeNo);
+	public int getListCount(SqlSession session, Map<String, String> paramMap) {
+		int result = session.selectOne("NoticeMapper.selectNoticesByKeywordCount", paramMap);
 		return result;
-	}
-
-	@Override
-	public int modifyNotice(SqlSession session, Notice notice) {
-		int result = session.update("NoticeMapper.modifyNotice", notice);
-		return result;
-	}
-
-	@Override
-	public Notice getNoticeByNo(SqlSession session, String noticeNo) {
-		Notice notice = session.selectOne("NoticeMapper.getNoticeByNo", noticeNo);
-		return notice;
 	}
 	
 

@@ -9,11 +9,12 @@
 		<result property="nCreateDate" column="N_CREATE_DATE" />
 		<result property="nUpdateDate" column="N_UPDATE_DATE" />
 		<result property="noticeFilename" column="NOTICE_FILENAME" />
+		<result property="noticeFileRename" column="NOTICE_FILERENAME" />
 		<result property="noticeFilepath" column="NOTICE_FILEPATH" />
 		<result property="noticeFilelength" column="NOTICE_FILELENGTH" />
 	</resultMap>
 	<insert id="insertNotice">
-		INSERT INTO NOTICE_TBL VALUES(SEQ_NOTICE_NO.NEXTVAL, #{noticeSubject }, #{noticeContent }, #{noticeWriter },DEFAULT,DEFAULT,#{noticeFilename },#{noticeFilepath },#{noticeFilelength })
+		INSERT INTO NOTICE_TBL VALUES(SEQ_NOTICE_NO.NEXTVAL, #{noticeSubject }, #{noticeContent }, #{noticeWriter },DEFAULT,DEFAULT,#{noticeFilename },#{noticeFileRename }, #{noticeFilepath },#{noticeFilelength })
 	</insert>
 	
 	<select id="getListCount" resultType="_int">
@@ -61,10 +62,10 @@
 	</delete>
 	
 	<update id="modifyNotice">
-		UPDATE NOTICE_TBL SET NOTICE_SUBJECT = #{noticeSubject }, NOTICE_CONTENT = #{noticeContent } WHERE NOTICE_NO = #{noticeNo }
+		UPDATE NOTICE_TBL SET NOTICE_SUBJECT = #{noticeSubject }, NOTICE_CONTENT = #{noticeContent }, NOTICE_FILENAME = #{noticeFilename }, NOTICE_FILERENAME = #{noticeFileRename }, NOTICE_FILEPATH = #{noticeFilepath }, NOTICE_FILELENGTH = #{noticeFilelength }, N_UPDATE_DATE = DEFAULT WHERE NOTICE_NO = #{noticeNo }
 	</update>
 	
-	<select id="getNoticeByNo" resultMap="noticeResultMap">
-		SELECT * FROM NOTICE_TBL WHERE NOTICE_NO = ${noticeNo }
+	<select id="selectNoticeByNo" resultMap="noticeResultMap">
+		SELECT * FROM NOTICE_TBL WHERE NOTICE_NO = #{noticeNo }
 	</select>
 </mapper>

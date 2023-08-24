@@ -45,11 +45,12 @@
 					<ul>
 						<li>
 							<label>아이디 : </label>
-							<span>${member.memberId }</span>	
+							<span>${member.memberId }</span>
+<%--  							<input id="memberId" name="memberId" type="text" value="${member.memberId }"><br> --%>
 						</li>
 						<li>
 							<label>비밀번호 : </label>
-							<input id="memberPw" name="memberPw" type="password"><br>
+							<input id="memberPw" name="memberPw" type="password" value="${member.memberPw }"><br>
 						</li>
 						<li>
 							<label>이름 : </label>
@@ -57,17 +58,18 @@
 						</li>
 						<li>
 							<label>연락처 : </label>
-							<input id="memberPhone"  name="memberPhone" type="text"><br>
+							<input id="memberPhone"  name="memberPhone" type="text" value="${member.memberPhone }"><br>
 						</li>
 						<li>
 							<label>이메일 : </label>
-							<input id="memberEmail"  name="memberEmail" type="text"><br>
+							<input id="memberEmail"  name="memberEmail" type="text" value="${member.memberEmail }"><br>
 						</li>
 						<li>
 							<label>나이 : </label>
 							<span>${member.memberAge }</span>
 						</li>
 						<li>
+							<label>성별 : </label>
 							<c:if test="${member.memberGender eq 'M'}"><span>남자</span></c:if>
 							<c:if test="${member.memberGender eq 'F'}"><span>여자</span></c:if>
 						</li>

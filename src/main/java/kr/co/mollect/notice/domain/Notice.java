@@ -10,8 +10,29 @@ public class Notice {
 	private Timestamp nCreateDate;
 	private Timestamp nUpdateDate;
 	private String noticeFilename;
+	private String noticeFileRename;
 	private String noticeFilepath;
 	private long noticeFilelength;
+	
+	public Notice() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Notice(int noticeNo, String noticeSubject, String noticeContent, String noticeWriter, Timestamp nCreateDate,
+			Timestamp nUpdateDate, String noticeFilename, String noticeFileRename, String noticeFilepath,
+			long noticeFilelength) {
+		super();
+		this.noticeNo = noticeNo;
+		this.noticeSubject = noticeSubject;
+		this.noticeContent = noticeContent;
+		this.noticeWriter = noticeWriter;
+		this.nCreateDate = nCreateDate;
+		this.nUpdateDate = nUpdateDate;
+		this.noticeFilename = noticeFilename;
+		this.noticeFileRename = noticeFileRename;
+		this.noticeFilepath = noticeFilepath;
+		this.noticeFilelength = noticeFilelength;
+	}
 	public int getNoticeNo() {
 		return noticeNo;
 	}
@@ -54,6 +75,12 @@ public class Notice {
 	public void setNoticeFilename(String noticeFilename) {
 		this.noticeFilename = noticeFilename;
 	}
+	public String getNoticeFileRename() {
+		return noticeFileRename;
+	}
+	public void setNoticeFileRename(String noticeFileRename) {
+		this.noticeFileRename = noticeFileRename;
+	}
 	public String getNoticeFilepath() {
 		return noticeFilepath;
 	}
@@ -68,11 +95,12 @@ public class Notice {
 	}
 	@Override
 	public String toString() {
-		return "게시판 [글번호=" + noticeNo + ", 글제목=" + noticeSubject + ", 글내용=" + noticeContent
-				+ ", 글작성자=" + noticeWriter + ", 글쓴 날짜=" + nCreateDate + ", 글수정 날짜=" + nUpdateDate
-				+ ", noticeFilename=" + noticeFilename + ", noticeFilepath=" + noticeFilepath + ", noticeFilelength="
-				+ noticeFilelength + "]";
+		return "Notice [noticeNo=" + noticeNo + ", noticeSubject=" + noticeSubject + ", noticeContent=" + noticeContent
+				+ ", noticeWriter=" + noticeWriter + ", nCreateDate=" + nCreateDate + ", nUpdateDate=" + nUpdateDate
+				+ ", noticeFilename=" + noticeFilename + ", noticeFileRename=" + noticeFileRename + ", noticeFilepath="
+				+ noticeFilepath + ", noticeFilelength=" + noticeFilelength + "]";
 	}
-	
+		
+
 	
 }

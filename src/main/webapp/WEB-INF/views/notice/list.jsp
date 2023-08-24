@@ -60,7 +60,7 @@
 						<c:forEach var="notice" items="${nList }" varStatus="i">
 							<tr>
 						<td>${i.count }</td>
-						<td><a href="/notice/detail.do?noticeNo=${noticeNo }">${notice.noticeSubject }</a></td>
+						<td><a href="/notice/detail.do?noticeNo=${notice.noticeNo }">${notice.noticeSubject }</a></td>
 						<td>${notice.noticeWriter }</td>
 						<td>
 							<fmt:formatDate pattern="yyyy-MM-dd" value="${notice.nCreateDate }" />

@@ -57,10 +57,10 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="notice" items="${nList }" varStatus="i">
+						<c:forEach var="notice" items="${sList }" varStatus="i">
 							<tr>
 						<td>${i.count }</td>
-						<td>${notice.noticeSubject }</td>
+						<td><a href="/notice/detail.do?noticeNo=${notice.noticeNo }">${notice.noticeSubject }</a></td>
 						<td>${notice.noticeWriter }</td>
 						<td>
 							<fmt:formatDate pattern="yyyy-MM-dd" value="${notice.nCreateDate }" />
@@ -74,7 +74,7 @@
 				<tr align="center">
 					<td colspan="5">
 						<c:forEach begin="${pInfo.startNavi }" end="${pInfo.endNavi }" var="p">
-							<c:url var="pageUrl" value="/notice/list.do">
+							<c:url var="pageUrl" value="/notice/search.do">
 								<c:param name="page" value="${p }"></c:param>
 								<c:param name="searchCondition" value="${searchCondition }"></c:param>
 								<c:param name="searchKeyword" value="${searchKeyword }"></c:param>

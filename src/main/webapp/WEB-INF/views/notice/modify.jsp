@@ -42,12 +42,12 @@
 							<ul>
 								<li><label>제목</label> <input type="text" id="noticeSubject"
 									name="noticeSubject" value="${notice.noticeSubject }"></li>
-								<li><label>작성자</label> <input type="text" id="noticeWriter"
-									name="noticeWriter" value="${notice.noticeWriter }" readonly></li>
+								<li><label>작성자</label>
+								<span>${notice.noticeWriter }</span></li>
 								<li><label>내용</label><br> <textarea rows="20"
 										cols="40" id="noticeContent" name="noticeContent">${notice.noticeContent }</textarea></li>
 								<li><label>첨부파일</label> <input type="file" id="uploadFile"
-									name="uploadFile"></li>
+									name="uploadFile">${notice.noticeFilename }</li>
 							</ul>
 							<button type="submit">수정하기</button>
 							<button type="reset">초기화</button>

@@ -72,18 +72,6 @@ public class MemberController {
 		}
 	}
 	
-	@RequestMapping(value="/member/logout.do", method=RequestMethod.GET)
-	public String memberLogout(HttpSession session, Model model) {
-		if(session != null) {
-			session.invalidate();
-			return "redirect:/index.jsp";
-		}else {
-			model.addAttribute("msg", "로그아웃 실패");
-			model.addAttribute("url", "/member/mypage.do");
-			return "common/errorPage";
-		}
-	}
-	
 	@RequestMapping(value="/member/mypage.do", method=RequestMethod.GET)
 	public String showMyPage(
 			@RequestParam("memberId") String memberId
@@ -101,6 +89,18 @@ public class MemberController {
 		} catch (Exception e) {
 			model.addAttribute("msg", "관리자에게 문의해주세요.");
 			model.addAttribute("url", "/index.jsp");
+			return "common/errorPage";
+		}
+	}
+
+	@RequestMapping(value="/member/logout.do", method=RequestMethod.GET)
+	public String memberLogout(HttpSession session, Model model) {
+		if(session != null) {
+			session.invalidate();
+			return "redirect:/index.jsp";
+		}else {
+			model.addAttribute("msg", "로그아웃 실패");
+			model.addAttribute("url", "/member/mypage.do");
 			return "common/errorPage";
 		}
 	}
@@ -122,11 +122,12 @@ public class MemberController {
 				return "redirect:/index.jsp";
 			}else {
 				model.addAttribute("msg","개인정보 수정 실패");
-				model.addAttribute("url", "/member/mypage.do?memberId"+member.getMemberId());
+				model.addAttribute("url", "/member/mypage.do?memberId="+member.getMemberId());
 				return "common/errorPage";
 			}
 		} catch (Exception e) {
 			model.addAttribute("msg", "관리자에게 문의해주세요.");
+			model.addAttribute("error", e.getMessage());
 			model.addAttribute("url", "/index.jsp");
 			return "common/errorPage";
 		}

@@ -27,6 +27,18 @@ public class NoticeServiceImpl implements NoticeService{
 	}
 
 	@Override
+	public int modifyNotice(Notice notice) {
+		int result = nStore.modifyNotice(session, notice);
+		return result;
+	}
+
+	@Override
+	public int eraseNotice(String noticeNo) {
+		int result = nStore.eraseNotice(session, noticeNo);
+		return result;
+	}
+
+	@Override
 	public int getListCount() {
 		int result = nStore.getListCount(session);
 		return result;
@@ -39,9 +51,9 @@ public class NoticeServiceImpl implements NoticeService{
 	}
 
 	@Override
-	public int getListCount(Map<String, String> paramMap) {
-		int result = nStore.getListCount(session, paramMap);
-		return result;
+	public Notice selectNoticeByNo(Integer noticeNo) {
+		Notice noticeOne = nStore.selectNoticeByNo(session, noticeNo);
+		return noticeOne;
 	}
 
 	@Override
@@ -51,21 +63,9 @@ public class NoticeServiceImpl implements NoticeService{
 	}
 
 	@Override
-	public int eraseNotice(String noticeNo) {
-		int result = nStore.eraseNotice(session, noticeNo);
+	public int getListCount(Map<String, String> paramMap) {
+		int result = nStore.getListCount(session, paramMap);
 		return result;
-	}
-
-	@Override
-	public int modifyNotice(Notice notice) {
-		int result = nStore.modifyNotice(session, notice);
-		return result;
-	}
-
-	@Override
-	public Notice getNoticeByNo(String noticeNo) {
-		Notice notice = nStore.getNoticeByNo(session,noticeNo);
-		return notice;
 	}
 
 }

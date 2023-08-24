@@ -69,8 +69,8 @@
 						</li>
 						<li>
 							<label>성별</label>
-							<input id="memberGender" type="radio" name="memberGender" value="male">남
-							<input id="memberGender" type="radio" name="memberGender" value="female">여<br>
+							<input id="memberGender" type="radio" name="memberGender" value="M">남
+							<input id="memberGender" type="radio" name="memberGender" value="F">여<br>
 						</li>
 					</ul>
 					<input type="submit" value="회원가입">
